@@ -895,22 +895,22 @@ $(window).on('load', function() {
   function changeAttribution() {
     var attributionHTML = $('.leaflet-control-attribution')[0].innerHTML;
     // <a href="' + googleDocURL + '" target="_blank">data</a>
-    var credit = 'View data';
+    var credit = 'Carte affichée';
     var name = getSetting('_authorName');
     var url = getSetting('_authorURL');
 
     if (name && url) {
       if (url.indexOf('@') > 0) { url = 'mailto:' + url; }
-      credit += ' by <a href="' + url + '">' + name + '</a> | ';
+      credit += ' par <a href="' + url + '">' + name + '</a> | ';
     } else if (name) {
       credit += ' by ' + name + ' | ';
     } else {
       credit += ' | ';
     }
 // <a href="' + getSetting('_githubRepo') + '">code</a>
-    credit += 'View map';
+    credit += 'Carte map';
     if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
-    credit += ' with ';
+    credit += ' avec ';
     $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;
   }
 
